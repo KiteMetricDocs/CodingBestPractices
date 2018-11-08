@@ -19,7 +19,7 @@ Good: var elapsedTimeInDays;
 * Avoid copy and paste code
 * Avoid copy, paste and modify code
 * Avoid different code but the same logics
-* Avoid different variable/object of the whole resource.
+* Avoid different variable of the same information.
 # Error handling
 * Provide context with errors						
 * Each exception that you throw should provide enough context to determine the source and location of an error
