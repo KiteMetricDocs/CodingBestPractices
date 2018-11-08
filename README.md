@@ -39,4 +39,4 @@ i++; // increment i
 # Complexity
 # Others
 ### Forever TODO
-### Committ message
+### Commit message
