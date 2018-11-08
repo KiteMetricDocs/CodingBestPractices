@@ -25,6 +25,8 @@ Good: var elapsedTimeInDays;
 * Create informative error messages and pass them along with your exceptions. Men- tion the operation that failed and the type of failure.
 
 # Performance
+## N+1 problems
+## Be careful with premature optimization
 ...
 # Comments
 * You should first strive to make your code as simple as possible to understand. Then at the point where the code cannot be made easier to understand should you begin to add comments. For example:
