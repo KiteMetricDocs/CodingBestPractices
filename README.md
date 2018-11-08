@@ -11,6 +11,7 @@ Good: var elapsedTimeInDays;
 * Use Searchable Names. Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text.
 * Methods should have verb or verb phrase
 * Classes and objects should have noun or noun phrase
+* Boolean variable name should have `is` prefix. Sometimes `can`, `should`, or `has` can be used when appropriate. E.g. isVisible, shouldUpdate, canAbort, hasEntity.
 * Keep the name up to date with the implementation
 * ....
 
@@ -36,6 +37,7 @@ Good: var elapsedTimeInDays;
 * Avoid redundant comments. A comment is redundant if it describes something that adequately describes itself. For example:
 i++; // increment i
 * Remove Commented-Out Code. We don’t need to keep the old code by commenting-out, the source control does this. And most of the time, commented-out code is useless.
+* At the top of the definition of a function, a short description should be provided, explaining what the function is aiming to do, what are the parameters. Especially, in most of scripting languages, it is important to indidate the type of the input paramenters.   
 # Function design
 * Keep the function small and does one thing well
 * The number of arguments should smaller than 3.
