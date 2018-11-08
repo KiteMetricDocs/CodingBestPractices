@@ -32,10 +32,11 @@ Good: var elapsedTimeInDays;
 * Avoid redundant comments. A comment is redundant if it describes something that adequately describes itself. For example:
 i++; // increment i
 * Remove Commented-Out Code. We don’t need to keep the old code by commenting-out, the source control does this. And most of the time, commented-out code is useless.
-## Function design
+# Function design
 * Keep the function small and does one thing well
 * The number of arguments should smaller than 3.
 * A function should have NO side effects
-## Complexity
-## Others
-## Forever TODO
+# Complexity
+# Others
+### Forever TODO
+### Committ message
