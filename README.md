@@ -41,6 +41,7 @@ i++; // increment i
 * The number of arguments should smaller than 3.
 * A function should have NO side effects
 # Complexity
+## Keep technical code away from business code
 # Others
 ### Forever TODO
 ### Commit message
