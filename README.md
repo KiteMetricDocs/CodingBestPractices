@@ -2,6 +2,7 @@ The best practices which are not be able to checked by automatic tools.
 Scope: general programming and javascript.
 
 # Naming
+Choose the names carefully. If you can't name well, you probably can't manage your code.
 * Choose descriptive name. 
 Bad: var d; // elapsed time in days
 Good: var elapsedTimeInDays;
@@ -11,6 +12,7 @@ Good: var elapsedTimeInDays;
 * Methods should have verb or verb phrase
 * Classes and objects should have noun or noun phrase
 * Keep the name up to date with the implementation
+* ....
 
 # Duplication
 * Avoid copy and paste code
