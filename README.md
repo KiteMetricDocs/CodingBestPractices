@@ -1,3 +1,5 @@
+# THIS DOCUMENT IS UNDER CONSTRUCTION
+
 The best practices which are not be able to checked by automatic tools.
 
 Scope: general programming and javascript.
