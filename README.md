@@ -1,11 +1,15 @@
 The best practices which are not be able to checked by automatic tools.
+
 Scope: general programming and javascript.
 
 # Naming
 Choose the names carefully. If you can't name well, you probably can't manage your code.
-* Choose descriptive name. 
-Bad: var d; // elapsed time in days
-Good: var elapsedTimeInDays;
+* Choose descriptive name. Examples:
+
+*Bad*: var d; // elapsed time in days
+*Good*: var elapsedTimeInDays;
+
+TODO add more examples
 * Keep the name short if possible. However, don’t be afraid of long name if it is necessary to describe object. Normally, the larger scope the name is the longer length it is.
 * Use Pronounceable and correct English names
 * Use Searchable Names. Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text.
@@ -19,11 +23,13 @@ Good: var elapsedTimeInDays;
 * Avoid copy and paste code
 * Avoid copy, paste and modify code
 * Avoid different code but the same logics
-* Avoid different variable of the same information.
+* Avoid different variables keep the same information (to try keep single source of truth).
 # Error handling
-* Provide context with errors						
+* NEVER catch error and keep silent.
 * Each exception that you throw should provide enough context to determine the source and location of an error
-* Create informative error messages and pass them along with your exceptions. Men- tion the operation that failed and the type of failure.
+* Create informative error messages and pass them along with your exceptions. Mention the operation that failed and the type of failure.
+
+TODO give examples
 
 # Performance
 ## N+1 problems
@@ -35,6 +41,7 @@ Good: var elapsedTimeInDays;
 * Explain how the code works when your write complex algorithm.
 * Keep the comments up to date.
 * Avoid redundant comments. A comment is redundant if it describes something that adequately describes itself. For example:
+
 i++; // increment i
 * Remove Commented-Out Code. We don’t need to keep the old code by commenting-out, the source control does this. And most of the time, commented-out code is useless.
 * At the top of the definition of a function, a short description should be provided, explaining what the function is aiming to do, what are the parameters. Especially, in most of scripting languages, it is important to indidate the type of the input paramenters.   
@@ -45,5 +52,4 @@ i++; // increment i
 # Complexity
 ## Keep technical code away from business code
 # Others
-### Forever TODO
-### Commit message
+### Commit messages
