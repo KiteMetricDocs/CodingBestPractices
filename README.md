@@ -104,4 +104,61 @@ i++; // increment i
 # Complexity
 ## Keep technical code away from business code
 # Others
+### Avoid magic number
+Magic number is hard to understand and hard to update. Define them as meaning full constant.
+
+<details><summary>Example</summary>
+<p>
+
+#### BAD
+```javascript
+if (activeTab === 1) {
+ // do something
+} else if (activeTab === 3) {
+ // do something.
+}
+```
+#### GOOD
+```javascript
+const GENERAL_TAB_INDEX = 1;
+const MEMBERS_TAB_INDEX = 3;
+
+if (activeTabIndex === GENERAL_TAB_INDEX) {
+ // do something,
+} else if (activeTabIndex === MEMBERS_TAB_INDEX) {
+ // do something.
+}
+```
+
+</p>
+
+<p>
+
+#### BAD
+
+```javascript
+const numberOfFrames = video.length * 48;
+
+//  at another place.
+
+const video.length = numberOfFrames / 48;
+
+```
+
+#### GOOD
+
+```javascript
+const NUMBER_OF_FRAMES_PER_SECOND = 48;
+
+const numberOfFrames = video.length * NUMBER_OF_FRAMES_PER_SECOND;
+
+//  at another place.
+
+const video.length = numberOfFrames / NUMBER_OF_FRAMES_PER_SECOND;
+
+```
+
+</p>
+
+</details>
 ### Commit messages
