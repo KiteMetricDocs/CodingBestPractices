@@ -23,6 +23,52 @@ TODO add more examples
 
 # Duplication
 * Avoid copy and paste code
+<details><summary>Examples</summary>
+
+<p>
+  
+### BAD
+``` javascript
+      const initialOrganizationLinkOptions = props.organizationLinks.map((obj) => {
+          return { value: `${obj.id}accessLevel${AccessLevel.READ_DOWNLOAD.value}`,
+                  label: `${obj.name} ${AccessLevel.READ_DOWNLOAD.name}` };
+      });
+      
+      //.... 
+      // And in another function:
+      const organizationLinkOptions = selectedOrganizations.map((obj) => {
+          return { value: `${obj.id}accessLevel${AccessLevel.READ_DOWNLOAD.value}`,
+                  label: `${obj.name} ${AccessLevel.READ_DOWNLOAD.name}` };
+      });
+```
+### GOOD
+Create a function to convert organization link data into select option, then reuse in 2 places
+
+``` javascript
+      const initialOrganizationLinkOptions = convertToSelectOptions(props.organizationLinks);
+      
+      //.... 
+      // And in another function:
+      const organizationLinkOptions = convertToSelectOptions(selectedOrganizations);
+```
+
+</p>
+<p>
+### BAD
+The date time formatting appears several places due to copy & paste
+```javascript
+ const createdDateTimeText = moment(data.createdAt).format('YYYY-MM-DD HH:mm');
+ ...
+ 
+ const loginDateTimeText = moment(data.loginAt).format('YYYY-MM-DD HH:mm');
+ 
+```
+### GOOD
+Create a unified date time format function for whole application. For example: formatDateTime, formatDate, formatTime,...
+</p>
+
+</details>
+
 * Avoid copy, paste and modify code
 * Avoid different code but the same logics
 * Avoid different variables keep the same information (to try keep single source of truth).
