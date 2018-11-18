@@ -73,6 +73,7 @@ Create a unified date time format function for whole application. For example: f
 </p>
 
 </details>
+
 * Avoid different code but the same logics
 * Avoid different variables keep the same information (to try keep single source of truth).
 # Error handling
