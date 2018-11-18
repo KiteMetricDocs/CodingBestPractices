@@ -23,8 +23,10 @@ TODO add more examples
 
 # Duplication
 * Avoid copy and paste code
-<details><summary>Examples</summary>
+<details>
 
+<summary>Examples</summary>
+  
 <p>
   
 ### BAD
@@ -53,7 +55,9 @@ Create a function to convert organization link data into select option, then reu
 ```
 
 </p>
+
 <p>
+  
 ### BAD
 The date time formatting appears several places due to copy & paste
 ```javascript
@@ -65,6 +69,7 @@ The date time formatting appears several places due to copy & paste
 ```
 ### GOOD
 Create a unified date time format function for whole application. For example: formatDateTime, formatDate, formatTime,...
+
 </p>
 
 </details>
