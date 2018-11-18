@@ -44,7 +44,7 @@ TODO add more examples
       });
 ```
 ### GOOD
-Create a function to convert organization link data into select option, then reuse in 2 places
+Create a function to convert organization link data into select option, then reuse at 2 places
 
 ``` javascript
       const initialOrganizationLinkOptions = convertToSelectOptions(props.organizationLinks);
