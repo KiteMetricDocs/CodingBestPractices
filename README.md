@@ -8,10 +8,16 @@ Scope: general programming and javascript.
 Choose the names carefully. If you can't name well, you probably can't manage your code.
 * Choose descriptive name. Examples:
 
-*Bad*: var d; // elapsed time in days
-*Good*: var elapsedTimeInDays;
+<details><summary>Examples</summary>
+<p>
 
-TODO add more examples
+### BAD
+var d; // elapsed time in days
+### GOOD
+var elapsedTimeInDays;
+</p>
+</details>
+
 * Keep the name short if possible. However, don’t be afraid of long name if it is necessary to describe object. Normally, the larger scope the name is the longer length it is.
 * Use Pronounceable and correct English names
 * Use Searchable Names. Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text.
@@ -74,8 +80,6 @@ Create a unified date time format function for whole application. For example: f
 
 </details>
 
-* Avoid different code but the same logics
-* Avoid different variables keep the same information (to try keep single source of truth).
 # Error handling
 * NEVER catch error and keep silent.
 * Each exception that you throw should provide enough context to determine the source and location of an error
