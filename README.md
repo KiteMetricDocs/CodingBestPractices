@@ -6,26 +6,32 @@ Scope: general programming and javascript.
 
 # Naming
 Choose the names carefully. If you can't name well, you probably can't manage your code.
-* Choose descriptive name. Examples:
-
-<details><summary>Examples</summary>
-<p>
-
-### BAD
-var d; // elapsed time in days
-### GOOD
-var elapsedTimeInDays;
-</p>
-</details>
-
-* Keep the name short if possible. However, don’t be afraid of long name if it is necessary to describe object. Normally, the larger scope the name is the longer length it is.
+* Choose descriptive name. 
 * Use Pronounceable and correct English names
-* Use Searchable Names. Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text.
 * Methods should have verb or verb phrase
 * Classes and objects should have noun or noun phrase
 * Boolean variable name should have `is` prefix. Sometimes `can`, `should`, or `has` can be used when appropriate. E.g. isVisible, shouldUpdate, canAbort, hasEntity.
 * Keep the name up to date with the implementation
-* ....
+
+<details><summary>Examples</summary>
+<p>
+  
+### BAD
+var d; // elapsed time in days
+
+### GOOD
+var elapsedTimeInDays;
+  
+### BAD
+
+const insTsmp;
+ 
+### GOOD
+
+const insertedTimestamp;
+
+</p>
+</details>
 
 # Duplication
 * Avoid copy and paste code
@@ -37,27 +43,34 @@ var elapsedTimeInDays;
   
 ### BAD
 ``` javascript
-      const initialOrganizationLinkOptions = props.organizationLinks.map((obj) => {
-          return { value: `${obj.id}accessLevel${AccessLevel.READ_DOWNLOAD.value}`,
-                  label: `${obj.name} ${AccessLevel.READ_DOWNLOAD.name}` };
+      const initialLinkOptions = props.currentLinks.map((link) => {
+          return { value: `${link.id}${SEPERATOR}${link.accessLevel.code}`,
+                  label: `${link.accessLevel.code === 'FULL'? 'Full access': 'Readonly'}` };
       });
       
       //.... 
       // And in another function:
-      const organizationLinkOptions = selectedOrganizations.map((obj) => {
-          return { value: `${obj.id}accessLevel${AccessLevel.READ_DOWNLOAD.value}`,
-                  label: `${obj.name} ${AccessLevel.READ_DOWNLOAD.name}` };
+      const selectedLinkOptions = selectedLinks.map((link) => {
+          return { value: `${link.id}${SEPERATOR}${link.accessLevel.code}`,
+                  label: `${link.accessLevel.code === 'FULL'? 'Full access': 'Readonly'}` };
       });
 ```
 ### GOOD
 Create a function to convert organization link data into select option, then reuse at 2 places
 
 ``` javascript
-      const initialOrganizationLinkOptions = convertToSelectOptions(props.organizationLinks);
+      function convertLinksToSelectOptions(links){
+           return links.map((link) => {
+                return { value: `${link.id}${SEPERATOR}${link.accessLevel.code}`,
+                  label: `${link.accessLevel.code === 'FULL'? 'Full access': 'Readonly'}` };
+           });
+      }
       
-      //.... 
-      // And in another function:
-      const organizationLinkOptions = convertToSelectOptions(selectedOrganizations);
+      // Then reuse
+      const initialLinkOptions = convertLinksToSelectOptions(props.currentLinks);
+     
+      // ...
+      const selectedLinkOptions = convertLinksToSelectOptions(selectedLinks);
 ```
 
 </p>
@@ -65,7 +78,7 @@ Create a function to convert organization link data into select option, then reu
 <p>
   
 ### BAD
-The date time formatting appears several places due to copy & paste
+Copy and paste date time format at different places in the code.
 ```javascript
  const createdDateTimeText = moment(data.createdAt).format('YYYY-MM-DD HH:mm');
  ...
@@ -75,6 +88,13 @@ The date time formatting appears several places due to copy & paste
 ```
 ### GOOD
 Create a unified date time format function for whole application. For example: formatDateTime, formatDate, formatTime,...
+
+### BAD
+Copy render code and paste in different places
+
+### GOOD 
+Create view component, and reuse as component in different places.
+
 
 </p>
 
